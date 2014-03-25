@@ -11,6 +11,30 @@
   <script src="main.js"></script>
 </head>
 <body>
+  <div class="design-container">
+    <div class="design">
+      <img />
+      <div class="stats">
+        <span class="count"></span>
+        <span class="prob"></span>
+      </div>
+    </div>
+    <div class="design">
+      <img />
+      <div class="stats">
+        <span class="count"></span>
+        <span class="prob"></span>
+      </div>
+    </div>
+    <div class="design">
+      <img />
+      <div class="stats">
+        <span class="count"></span>
+        <span class="prob"></span>
+      </div>
+    </div>
+  </div>
+
   <div class="client-container">
     <iframe width="300" height="300"></iframe>
     <iframe width="300" height="300"></iframe>
@@ -18,10 +42,12 @@
   </div>
 
   <script>
+    var divs = document.getElementsByClassName('design');
+
     var designs = [
-      new Design(8, 0.5),
-      new Design(9, 0.9),
-      new Design(10, 0.1)
+      new Design(8, 0.5, divs[0]),
+      new Design(9, 0.9, divs[1]),
+      new Design(10, 0.1, divs[2])
     ];
 
     var iframes = document.getElementsByTagName('iframe');
@@ -30,7 +56,9 @@
       return new Client(10, iframe);
     });
 
-    Simulation.init(designs, clients);
+    Simulation.login('hello@test.com', 1234, function() {
+      Simulation.init(designs, clients);
+    });
   </script>
 </body>
 </html>
