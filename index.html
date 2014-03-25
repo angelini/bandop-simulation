@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <title>Bandop Simulation</title>
 
+  <link rel="stylesheet" type="text/css" href="style.css">
+
   <script src="underscore.js"></script>
   <script src="backbone.js"></script>
   <script src="reqwest.js"></script>
@@ -15,22 +17,22 @@
     <div class="design">
       <img />
       <div class="stats">
-        <span class="count"></span>
-        <span class="prob"></span>
+        <div>Count: <span class="count"></span></div>
+        <div>Prob: <span class="prob"></span></div>
       </div>
     </div>
     <div class="design">
       <img />
       <div class="stats">
-        <span class="count"></span>
-        <span class="prob"></span>
+        <div>Count: <span class="count"></span></div>
+        <div>Prob: <span class="prob"></span></div>
       </div>
     </div>
     <div class="design">
       <img />
       <div class="stats">
-        <span class="count"></span>
-        <span class="prob"></span>
+        <div>Count: <span class="count"></span></div>
+        <div>Prob: <span class="prob"></span></div>
       </div>
     </div>
   </div>
@@ -53,7 +55,7 @@
     var iframes = document.getElementsByTagName('iframe');
 
     var clients = _.map(iframes, function(iframe) {
-      return new Client(10, iframe);
+      return new Client(30, iframe);
     });
 
     Simulation.login('hello@test.com', 1234, function() {

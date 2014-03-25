@@ -1,0 +1,22 @@
+.design-container {
+    overflow: auto;
+}
+
+.design {
+    float: left;
+}
+
+.design img {
+    width: 100px;
+    height: 100px;
+    padding: 10px 20px;
+}
+
+.design .stats {
+    padding: 0 20px;
+}
+
+.client-container {
+    margin-top: 20px;
+    clear: left;
+}
