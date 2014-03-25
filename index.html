@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Bandop Simulation</title>
+
+  <script src="underscore.js"></script>
+  <script src="backbone.js"></script>
+  <script src="reqwest.js"></script>
+
+  <script src="main.js"></script>
+</head>
+<body>
+  <div class="client-container">
+    <iframe width="300" height="300"></iframe>
+    <iframe width="300" height="300"></iframe>
+    <iframe width="300" height="300"></iframe>
+  </div>
+
+  <script>
+    var designs = [
+      new Design(8, 0.5),
+      new Design(9, 0.9),
+      new Design(10, 0.1)
+    ];
+
+    var iframes = document.getElementsByTagName('iframe');
+
+    var clients = _.map(iframes, function(iframe) {
+      return new Client(10, iframe);
+    });
+
+    Simulation.init(designs, clients);
+  </script>
+</body>
+</html>
